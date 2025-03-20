@@ -16,8 +16,9 @@ logger = logging.getLogger(__name__)
 project_root = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, project_root)
 
-from stock_data_fetcher import get_stock_list, get_stock_data
-from kmj_indicator import calculate_kmj_indicators, get_kmj_signals
+from src.core.stock_data_fetcher import get_stock_list, get_stock_data
+from src.core.kmj_indicator import calculate_kmj_indicators, get_kmj_signals
+from src.utils.visualize import create_stock_chart
 
 # 行业分类
 INDUSTRY_CATEGORIES = {
