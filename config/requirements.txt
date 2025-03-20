@@ -1,0 +1,13 @@
+streamlit>=1.31.0
+pandas>=2.0.0
+numpy>=1.24.0
+plotly>=5.18.0
+akshare>=1.12.0
+tushare>=1.2.89
+requests>=2.31.0
+python-dateutil>=2.8.2
+pytz>=2023.3
+scipy>=1.11.0
+ta-lib>=0.4.28
+matplotlib>=3.7.0
+seaborn>=0.12.0 

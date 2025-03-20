@@ -1,95 +1,108 @@
-# 自动选股系统
+# KMJ指标选股系统
 
-基于KMJ指标体系的自动选股系统，使用Python和Streamlit构建。
+基于KMJ技术指标的A股选股系统，使用Streamlit构建Web界面。
+
+## 项目结构
+
+```
+项目根目录/
+├── src/                    # 源代码目录
+│   ├── core/              # 核心功能模块
+│   │   ├── kmj_indicator.py     # KMJ指标计算
+│   │   ├── stock_analyzer.py    # 股票分析逻辑
+│   │   ├── stock_data_fetcher.py # 数据获取模块
+│   │   └── stock_indicators.py   # 技术指标计算
+│   └── utils/             # 工具类
+│       ├── visualize.py        # 数据可视化
+│       ├── code_executor.py    # 代码执行器
+│       └── feishu_sync.py      # 飞书同步工具
+├── docs/                   # 文档目录
+│   ├── guides/            # 使用指南
+│   │   ├── AutoStock.md       # 自动选股说明
+│   │   └── 杨凯.md            # 开发文档
+│   ├── knowledge/         # 知识库
+│   │   └── 股票知识学习.md     # 股票知识文档
+│   └── reports/           # 报告文档
+│       ├── report.html        # 分析报告
+│       └── stock_analysis_report.html # 股票分析报告
+├── tests/                  # 测试目录
+│   ├── run_tests.py          # 测试运行器
+│   └── test_stock_data_fetcher.py # 数据获取测试
+├── charts/                 # 图表目录
+│   ├── stock/             # 股票图表
+│   │   ├── price_ma20_chart.html
+│   │   ├── volume_vol120_chart.html
+│   │   └── stock_analysis_chart.html
+│   └── nikkei/            # 日经指数相关
+│       └── rijing.py          # 日经指数分析
+├── static/                 # 静态资源
+│   └── images/            # 图片资源
+├── config/                 # 配置文件
+│   └── requirements.txt    # 项目依赖
+├── .streamlit/            # Streamlit配置
+│   └── config.toml        # Streamlit配置文件
+├── app.py                 # 应用主文件
+├── main.py               # 入口文件
+└── run.py                # 运行脚本
+```
 
 ## 功能特点
 
-- 基于KMJ指标体系的趋势跟踪
+- KMJ指标体系（趋势跟踪）
 - 自动识别买卖信号
-- 实时市场扫描
-- 多维度技术分析
-- 行业筛选
-- 可视化K线图表
-- 双数据源支持（Yahoo Finance + Baostock）
+- 行业分类分析
+- 技术分析评分（100分制）
+- 实时数据更新
+- 可视化分析结果
 
-## 安装要求
+## 安装说明
 
-1. Python 3.8+
-2. pip包管理器
-
-## 安装步骤
-
-1. 克隆代码库：
+1. 克隆项目：
 ```bash
-git clone <repository_url>
-cd 自动荐股
+git clone [项目地址]
+cd [项目目录]
 ```
 
 2. 安装依赖：
 ```bash
-pip install -r requirements.txt
+pip install -r config/requirements.txt
+```
+
+3. 运行应用：
+```bash
+streamlit run main.py
 ```
 
 ## 使用方法
 
-1. 启动应用：
-```bash
-streamlit run app.py
-```
+1. 在侧边栏输入Tushare Token
+2. 选择板块和行业
+3. 设置技术分析分数阈值
+4. 等待系统计算技术得分
+5. 查看筛选结果
 
-2. 在浏览器中打开显示的地址（通常是 http://localhost:8501）
+## 技术得分说明
 
-3. 使用界面：
-   - 在左侧边栏选择行业
-   - 设置最小技术得分
-   - 设置分析天数
-   - 点击"开始扫描"按钮
+- 90-100分：极强势
+- 70-89分：强势
+- 50-69分：中性偏强
+- 30-49分：中性偏弱
+- 0-29分：弱势
 
-## 技术指标说明
+## 开发说明
 
-### KMJ指标体系
-- KMJ1：(最低价 + 最高价 + 开盘价 + 3×收盘价) / 6
-- KMJ2：对KMJ1的加权移动平均
-- KMJ3：KMJ2的5日简单移动平均
+- 主要依赖：Python 3.12
+- Web框架：Streamlit 1.31.1
+- 数据源：Tushare API
+- 图表库：Plotly
 
-### 买卖信号
-- 买入信号：KMJ2上穿KMJ3
-- 卖出信号：KMJ2下穿KMJ3
-- 涨停信号：当日涨幅超过9.85%
+## 贡献指南
 
-### 技术得分说明
-系统使用多维度评分机制：
-- 趋势得分（2分）：KMJ2位于KMJ3上方
-- 买入信号（3分）：KMJ2上穿KMJ3
-- 成交量确认（1分）：当日成交量大于20日均量的1.5倍
-- 动量得分（1分）：5日涨幅超过5%
-
-## 数据源说明
-系统支持两个免费数据源：
-
-### 1. Yahoo Finance (主数据源)
-- 免费使用，无需API密钥
-- 支持全球主要市场股票数据
-- 提供历史数据和实时行情
-- 中国股票代码格式：
-  - 上证：股票代码.SS（如：600000.SS）
-  - 深证：股票代码.SZ（如：000001.SZ）
-
-### 2. Baostock (备用数据源)
-- 完全免费的证券数据平台
-- 专注于中国A股市场
-- 提供历史K线数据
-- 无需注册账号
-- 数据更新可能有延迟
-
-系统会自动在两个数据源之间切换，确保数据获取的可靠性。如果主数据源获取失败，会自动切换到备用数据源。
-
-## 注意事项
-
-- 本系统仅供参考，投资决策请结合个人风险偏好及市场整体环境
-- 建议在非交易时段运行大规模扫描，以避免数据获取限制
-- 不同数据源的数据可能存在细微差异
-- 部分股票可能因为代码变更或其他原因无法获取数据
+1. Fork 项目
+2. 创建特性分支
+3. 提交更改
+4. 推送到分支
+5. 创建 Pull Request
 
 ## 许可证
 

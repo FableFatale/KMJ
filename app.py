@@ -18,7 +18,6 @@ sys.path.insert(0, project_root)
 
 from src.core.stock_data_fetcher import get_stock_list, get_stock_data
 from src.core.kmj_indicator import calculate_kmj_indicators, get_kmj_signals
-from src.utils.visualize import create_stock_chart
 
 # 行业分类
 INDUSTRY_CATEGORIES = {
@@ -275,6 +274,19 @@ def screen_stocks(stocks_df, min_score=0, selected_industry_category='全部', s
     
     return filtered_stocks
 
+def get_stock_data_with_indicators(stock_code, days=60):
+    """获取带有技术指标的股票数据"""
+    data = get_stock_data(stock_code, days=days)
+    if data is not None and not data.empty:
+        # 计算KMJ指标
+        try:
+            data = calculate_kmj_indicators(data)
+            data = get_kmj_signals(data)
+        except Exception as e:
+            logger.error(f"Error calculating KMJ indicators: {str(e)}")
+            st.warning("计算KMJ指标时出错，可能会影响分析结果")
+    return data
+
 def main():
     # 初始化session_state
     if 'filtered_stocks' not in st.session_state:
@@ -307,7 +319,7 @@ def main():
                 
                 # 设置侧边栏
                 with st.sidebar:
-                    st.header("筛选设置")
+                    st.title("配置")
                     
                     # 板块选择
                     selected_board = st.selectbox(
@@ -482,7 +494,7 @@ def main():
                         
                         # 获取股票数据
                         with st.spinner('正在获取历史数据...'):
-                            data = get_stock_data(stock_info['ts_code'], days=60)
+                            data = get_stock_data_with_indicators(stock_code, days=60)
                             
                             if data is not None and not data.empty:
                                 # 计算KMJ指标

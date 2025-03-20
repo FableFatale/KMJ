@@ -10,6 +10,7 @@ import os
 import sys
 import subprocess
 import logging
+import unittest
 
 # 配置日志
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
@@ -20,6 +21,9 @@ def main():
     # 设置工作目录为脚本所在目录
     script_dir = os.path.dirname(os.path.abspath(__file__))
     os.chdir(script_dir)
+    
+    # 添加项目根目录到Python路径
+    sys.path.append(script_dir)
     
     print("=" * 50)
     print("自动选股系统启动脚本")
@@ -54,16 +58,17 @@ def main():
 def run_tests():
     """运行测试并返回是否成功"""
     try:
-        # 从test_stock_data_fetcher.py导入run_tests函数
-        # 如果导入失败，使用pytest运行所有测试
-        try:
-            from test_stock_data_fetcher import run_tests as run_fetcher_tests
-            return run_fetcher_tests()
-        except ImportError:
-            logger.warning("无法导入test_stock_data_fetcher.py中的run_tests函数，尝试使用pytest")
-            import pytest
-            result = pytest.main(["-v"])
-            return result == 0
+        # 发现并运行所有测试
+        loader = unittest.TestLoader()
+        start_dir = os.path.join(os.path.dirname(__file__), 'tests')
+        suite = loader.discover(start_dir, pattern='test_*.py')
+        
+        # 运行测试
+        runner = unittest.TextTestRunner(verbosity=2)
+        result = runner.run(suite)
+        
+        # 返回测试是否全部通过
+        return result.wasSuccessful()
     except Exception as e:
         logger.error(f"运行测试失败: {e}")
         print(f"运行测试失败: {e}")

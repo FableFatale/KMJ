@@ -8,9 +8,9 @@ import sys
 project_root = Path(__file__).parent.parent
 sys.path.append(str(project_root))
 
-from kmj_indicator import calculate_kmj_indicators, get_kmj_signals
-from stock_data_fetcher import get_stock_data
-from stock_analyzer import calculate_technical_score
+from src.core.kmj_indicator import calculate_kmj_indicators, get_kmj_signals
+from src.core.stock_data_fetcher import get_stock_data
+from src.core.stock_analyzer import calculate_technical_score
 
 class TestKMJSystem(unittest.TestCase):
     @classmethod
@@ -32,33 +32,38 @@ class TestKMJSystem(unittest.TestCase):
     def test_kmj_indicators_calculation(self):
         """测试KMJ指标计算"""
         # 计算KMJ指标
-        kmj1, kmj2, kmj3 = calculate_kmj_indicators(self.test_data)
+        data = calculate_kmj_indicators(self.test_data)
         
         # 验证KMJ1计算
-        self.assertEqual(len(kmj1), len(self.test_data))
-        self.assertTrue(all(~np.isnan(kmj1)))
+        self.assertTrue('KMJ1' in data.columns)
+        self.assertTrue(all(~pd.isna(data['KMJ1'])))
         
         # 验证KMJ2计算（前20个值应该是NaN）
-        self.assertEqual(len(kmj2), len(self.test_data))
-        self.assertTrue(all(np.isnan(kmj2[:20])))
-        self.assertTrue(all(~np.isnan(kmj2[20:])))
+        self.assertTrue('KMJ2' in data.columns)
+        self.assertTrue(all(pd.isna(data['KMJ2'][:20])))
+        self.assertTrue(all(~pd.isna(data['KMJ2'][20:])))
         
         # 验证KMJ3计算（前24个值应该是NaN）
-        self.assertEqual(len(kmj3), len(self.test_data))
-        self.assertTrue(all(np.isnan(kmj3[:24])))
-        self.assertTrue(all(~np.isnan(kmj3[24:])))
+        self.assertTrue('KMJ3' in data.columns)
+        self.assertTrue(all(pd.isna(data['KMJ3'][:24])))
+        self.assertTrue(all(~pd.isna(data['KMJ3'][24:])))
 
     def test_kmj_signals(self):
         """测试KMJ信号生成"""
         # 计算KMJ指标和信号
-        kmj1, kmj2, kmj3 = calculate_kmj_indicators(self.test_data)
-        signals = get_kmj_signals(kmj2, kmj3)
+        data = calculate_kmj_indicators(self.test_data)
+        data = get_kmj_signals(data)
         
-        # 验证信号数组长度
-        self.assertEqual(len(signals), len(self.test_data))
+        # 验证信号列存在
+        self.assertTrue('KMJ_TREND' in data.columns)
+        self.assertTrue('KMJ_BUY_SIGNAL' in data.columns)
+        self.assertTrue('KMJ_SELL_SIGNAL' in data.columns)
         
-        # 验证信号值是否合法（只能是1, 0, -1）
-        self.assertTrue(all(signal in [1, 0, -1] for signal in signals))
+        # 验证信号值是否合法
+        valid_trends = [-1, 0, 1]
+        self.assertTrue(all(x in valid_trends for x in data['KMJ_TREND'].dropna()))
+        self.assertTrue(all(isinstance(x, bool) for x in data['KMJ_BUY_SIGNAL'].dropna()))
+        self.assertTrue(all(isinstance(x, bool) for x in data['KMJ_SELL_SIGNAL'].dropna()))
 
     def test_technical_score(self):
         """测试技术得分计算"""
@@ -90,7 +95,7 @@ class TestKMJSystem(unittest.TestCase):
     def test_data_fetcher(self):
         """测试数据获取功能"""
         # 获取示例股票数据
-        data = get_stock_data('000001.SZ', days=30)
+        data = get_stock_data('000001', days=30)
         
         # 验证数据结构
         self.assertIsNotNone(data)
@@ -110,15 +115,15 @@ class TestKMJSystem(unittest.TestCase):
         
         # 测试数据量不足
         small_df = self.test_data.head(10)
-        kmj1, kmj2, kmj3 = calculate_kmj_indicators(small_df)
-        self.assertTrue(all(np.isnan(kmj2)))
-        self.assertTrue(all(np.isnan(kmj3)))
+        data = calculate_kmj_indicators(small_df)
+        self.assertTrue(all(pd.isna(data['KMJ2'])))
+        self.assertTrue(all(pd.isna(data['KMJ3'])))
         
         # 测试含有NaN的数据
         nan_df = self.test_data.copy()
         nan_df.loc[5:10, 'close'] = np.nan
-        kmj1, kmj2, kmj3 = calculate_kmj_indicators(nan_df)
-        self.assertTrue(any(np.isnan(kmj1)))
+        data = calculate_kmj_indicators(nan_df)
+        self.assertTrue(any(pd.isna(data['KMJ1'])))
 
 def run_tests():
     """运行所有测试"""
