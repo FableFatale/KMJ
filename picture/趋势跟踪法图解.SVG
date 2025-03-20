@@ -1,0 +1,40 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="500" fill="#f9f9f9"/>
+  
+  <!-- 标题 -->
+  <text x="300" y="30" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">趋势跟踪法图解</text>
+  
+  <!-- 上升趋势线 -->
+  <line x1="50" y1="400" x2="550" y2="200" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="560" y="200" font-family="Arial" font-size="12">上升趋势线</text>
+  
+  <!-- 支撑线 -->
+  <line x1="50" y1="450" x2="550" y2="250" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="560" y="250" font-family="Arial" font-size="12">支撑线</text>
+  
+  <!-- 股价走势 -->
+  <polyline points="50,380 100,360 150,320 200,340 250,300 300,280 350,240 400,260 450,220 500,200 550,180"
+            fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- 买点标注 -->
+  <circle cx="200" cy="340" r="5" fill="red"/>
+  <text x="200" y="360" font-family="Arial" font-size="12" text-anchor="middle">买点1</text>
+  
+  <circle cx="400" cy="260" r="5" fill="red"/>
+  <text x="400" y="280" font-family="Arial" font-size="12" text-anchor="middle">买点2</text>
+  
+  <!-- 止损位标注 -->
+  <line x1="200" y1="360" x2="200" y2="380" stroke="red" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="200" y="395" font-family="Arial" font-size="12" text-anchor="middle">止损位</text>
+  
+  <!-- 趋势确认区域 -->
+  <path d="M150,200 L150,400" stroke="#999" stroke-width="1" stroke-dasharray="3,3"/>
+  <text x="150" y="180" font-family="Arial" font-size="12" text-anchor="middle">趋势确认</text>
+  
+  <!-- 说明文字 -->
+  <text x="50" y="420" font-family="Arial" font-size="12">操作要点：</text>
+  <text x="70" y="440" font-family="Arial" font-size="12">1. 确认上升趋势形成后再入场</text>
+  <text x="70" y="460" font-family="Arial" font-size="12">2. 回调到支撑位时买入</text>
+  <text x="70" y="480" font-family="Arial" font-size="12">3. 设置止损位，破位及时止损</text>
+</svg>

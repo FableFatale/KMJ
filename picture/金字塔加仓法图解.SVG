@@ -1,0 +1,33 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="500" fill="#f9f9f9"/>
+  
+  <!-- 标题 -->
+  <text x="300" y="30" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">金字塔加仓法图解</text>
+  
+  <!-- 股价走势图 -->
+  <polyline points="50,400 100,380 150,350 200,320 250,300 300,270 350,230 400,200 450,180 500,150 550,130" 
+            fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- 加仓点标注 -->
+  <circle cx="150" cy="350" r="5" fill="red"/>
+  <text x="160" y="340" font-family="Arial" font-size="12">首次建仓20%</text>
+  
+  <circle cx="250" cy="300" r="5" fill="red"/>
+  <text x="260" y="290" font-family="Arial" font-size="12">加仓15%</text>
+  
+  <circle cx="350" cy="230" r="5" fill="red"/>
+  <text x="360" y="220" font-family="Arial" font-size="12">加仓10%</text>
+  
+  <circle cx="450" cy="180" r="5" fill="red"/>
+  <text x="460" y="170" font-family="Arial" font-size="12">加仓5%</text>
+  
+  <!-- 金字塔示意图 -->
+  <path d="M100,450 L200,350 L300,350 L400,450 Z" fill="#f0f0f0" stroke="#666"/>
+  <text x="250" y="420" font-family="Arial" font-size="12" text-anchor="middle">仓位递减</text>
+  
+  <!-- 说明文字 -->
+  <text x="50" y="480" font-family="Arial" font-size="12">策略说明：</text>
+  <text x="120" y="480" font-family="Arial" font-size="12">1. 在上涨趋势确立后逐步建仓</text>
+  <text x="120" y="495" font-family="Arial" font-size="12">2. 随着股价上涨，每次加仓的仓位逐步减小</text>
+</svg>

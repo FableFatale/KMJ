@@ -1,0 +1,54 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="400" fill="#f9f9f9"/>
+  
+  <!-- 坐标轴 -->
+  <line x1="50" y1="350" x2="550" y2="350" stroke="black" stroke-width="2"/>
+  <line x1="50" y1="50" x2="50" y2="350" stroke="black" stroke-width="2"/>
+  
+  <!-- X轴标签 -->
+  <text x="100" y="370" font-family="Arial" font-size="12" text-anchor="middle">Q1</text>
+  <text x="200" y="370" font-family="Arial" font-size="12" text-anchor="middle">Q2</text>
+  <text x="300" y="370" font-family="Arial" font-size="12" text-anchor="middle">Q3</text>
+  <text x="400" y="370" font-family="Arial" font-size="12" text-anchor="middle">Q4</text>
+  <text x="500" y="370" font-family="Arial" font-size="12" text-anchor="middle">Q5</text>
+  
+  <!-- 营收柱状图 -->
+  <rect x="80" y="350" width="40" height="-100" fill="#6495ED"/>
+  <rect x="180" y="350" width="40" height="-120" fill="#6495ED"/>
+  <rect x="280" y="350" width="40" height="-150" fill="#6495ED"/>
+  <rect x="380" y="350" width="40" height="-180" fill="#6495ED"/>
+  <rect x="480" y="350" width="40" height="-200" fill="#6495ED"/>
+  
+  <!-- 利润柱状图 -->
+  <rect x="80" y="350" width="40" height="-30" fill="#FF7F50"/>
+  <rect x="180" y="350" width="40" height="-40" fill="#FF7F50"/>
+  <rect x="280" y="350" width="40" height="-60" fill="#FF7F50"/>
+  <rect x="380" y="350" width="40" height="-80" fill="#FF7F50"/>
+  <rect x="480" y="350" width="40" height="-100" fill="#FF7F50"/>
+  
+  <!-- ROE线 -->
+  <polyline points="100,250 200,240 300,230 400,220 500,210" 
+            fill="none" stroke="green" stroke-width="2"/>
+  
+  <!-- EPS线 -->
+  <polyline points="100,270 200,260 300,250 400,240 500,230" 
+            fill="none" stroke="purple" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- 图例 -->
+  <rect x="400" y="100" width="150" height="100" fill="white" stroke="#ccc"/>
+  <rect x="410" y="115" width="10" height="10" fill="#6495ED"/>
+  <text x="430" y="125" font-family="Arial" font-size="12">营收</text>
+  
+  <rect x="410" y="135" width="10" height="10" fill="#FF7F50"/>
+  <text x="430" y="145" font-family="Arial" font-size="12">利润</text>
+  
+  <line x1="410" y1="155" x2="425" y2="155" stroke="green" stroke-width="2"/>
+  <text x="430" y="160" font-family="Arial" font-size="12">ROE</text>
+  
+  <line x1="410" y1="175" x2="425" y2="175" stroke="purple" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="430" y="180" font-family="Arial" font-size="12">EPS</text>
+  
+  <!-- 标题 -->
+  <text x="300" y="30" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">公司财务指标图解</text>
+</svg>

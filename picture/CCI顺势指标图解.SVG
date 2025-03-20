@@ -1,0 +1,50 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="500" fill="#f9f9f9"/>
+  
+  <!-- 上半部分：股价图 -->
+  <rect x="50" y="50" width="500" height="200" fill="#f0f0f0" stroke="#ccc"/>
+  
+  <!-- 股价线 -->
+  <polyline points="50,150 100,140 150,130 200,120 250,110 300,120 350,130 400,140 450,130 500,120 550,110" 
+            fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- 下半部分：CCI图 -->
+  <rect x="50" y="280" width="500" height="170" fill="#f0f0f0" stroke="#ccc"/>
+  
+  <!-- CCI参考线 -->
+  <line x1="50" y1="365" x2="550" y2="365" stroke="#999" stroke-width="1"/>
+  <text x="560" y="370" font-family="Arial" font-size="12" fill="#999">0</text>
+  
+  <line x1="50" y1="315" x2="550" y2="315" stroke="#ff9999" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="560" y="320" font-family="Arial" font-size="12" fill="#ff9999">+100</text>
+  
+  <line x1="50" y1="415" x2="550" y2="415" stroke="#99ccff" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="560" y="420" font-family="Arial" font-size="12" fill="#99ccff">-100</text>
+  
+  <!-- CCI线 -->
+  <polyline points="50,365 100,350 150,330 200,310 250,290 300,310 350,330 400,350 450,370 500,390 550,410" 
+            fill="none" stroke="purple" stroke-width="2"/>
+  
+  <!-- 标注 -->
+  <text x="250" y="300" font-family="Arial" font-size="12" fill="red">超买区域</text>
+  <path d="M250,305 L250,290" stroke="red" stroke-width="1" fill="none"/>
+  
+  <text x="550" y="430" font-family="Arial" font-size="12" fill="green">超卖区域</text>
+  <path d="M550,425 L550,410" stroke="green" stroke-width="1" fill="none"/>
+  
+  <!-- 图例 -->
+  <rect x="400" y="100" width="120" height="80" fill="white" stroke="#ccc"/>
+  <line x1="410" y1="115" x2="430" y2="115" stroke="#333" stroke-width="2"/>
+  <text x="440" y="120" font-family="Arial" font-size="12">股价</text>
+  
+  <line x1="410" y1="135" x2="430" y2="135" stroke="purple" stroke-width="2"/>
+  <text x="440" y="140" font-family="Arial" font-size="12">CCI</text>
+  
+  <line x1="410" y1="155" x2="430" y2="155" stroke="#ff9999" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="440" y="160" font-family="Arial" font-size="12">参考线</text>
+  
+  <!-- 标题 -->
+  <text x="300" y="30" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">CCI顺势指标图解</text>
+  <text x="300" y="270" font-family="Arial" font-size="14" text-anchor="middle">CCI指标</text>
+</svg>

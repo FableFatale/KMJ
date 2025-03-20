@@ -1,0 +1,71 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="500" fill="#f9f9f9"/>
+  
+  <!-- 标题 -->
+  <text x="300" y="30" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">均线多头排列与空头排列图解</text>
+  
+  <!-- 上半部分：多头排列 -->
+  <rect x="50" y="50" width="500" height="200" fill="#f0f0f0" stroke="#ccc"/>
+  <text x="300" y="70" font-family="Arial" font-size="14" text-anchor="middle">多头排列（短期均线在长期均线上方）</text>
+  
+  <!-- 多头排列股价线和均线 -->
+  <polyline points="50,150 100,140 150,130 200,120 250,110 300,100 350,90 400,80 450,70 500,60 550,50" 
+            fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- 5日均线 -->
+  <polyline points="50,160 100,150 150,140 200,130 250,120 300,110 350,100 400,90 450,80 500,70 550,60" 
+            fill="none" stroke="red" stroke-width="2"/>
+  
+  <!-- 20日均线 -->
+  <polyline points="50,180 100,170 150,160 200,150 250,140 300,130 350,120 400,110 450,100 500,90 550,80" 
+            fill="none" stroke="blue" stroke-width="2"/>
+  
+  <!-- 60日均线 -->
+  <polyline points="50,200 100,190 150,180 200,170 250,160 300,150 350,140 400,130 450,120 500,110 550,100" 
+            fill="none" stroke="green" stroke-width="2"/>
+  
+  <!-- 多头排列标注 -->
+  <path d="M350,140 L350,90" stroke="#666" stroke-width="1" stroke-dasharray="3,3" fill="none"/>
+  <text x="360" y="120" font-family="Arial" font-size="12" fill="#333">短期均线在上方</text>
+  <text x="360" y="140" font-family="Arial" font-size="12" fill="#333">长期均线在下方</text>
+  
+  <!-- 下半部分：空头排列 -->
+  <rect x="50" y="280" width="500" height="200" fill="#f0f0f0" stroke="#ccc"/>
+  <text x="300" y="300" font-family="Arial" font-size="14" text-anchor="middle">空头排列（短期均线在长期均线下方）</text>
+  
+  <!-- 空头排列股价线和均线 -->
+  <polyline points="50,350 100,360 150,370 200,380 250,390 300,400 350,410 400,420 450,430 500,440 550,450" 
+            fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- 5日均线 -->
+  <polyline points="50,340 100,350 150,360 200,370 250,380 300,390 350,400 400,410 450,420 500,430 550,440" 
+            fill="none" stroke="red" stroke-width="2"/>
+  
+  <!-- 20日均线 -->
+  <polyline points="50,320 100,330 150,340 200,350 250,360 300,370 350,380 400,390 450,400 500,410 550,420" 
+            fill="none" stroke="blue" stroke-width="2"/>
+  
+  <!-- 60日均线 -->
+  <polyline points="50,300 100,310 150,320 200,330 250,340 300,350 350,360 400,370 450,380 500,390 550,400" 
+            fill="none" stroke="green" stroke-width="2"/>
+  
+  <!-- 空头排列标注 -->
+  <path d="M350,360 L350,410" stroke="#666" stroke-width="1" stroke-dasharray="3,3" fill="none"/>
+  <text x="360" y="370" font-family="Arial" font-size="12" fill="#333">长期均线在上方</text>
+  <text x="360" y="390" font-family="Arial" font-size="12" fill="#333">短期均线在下方</text>
+  
+  <!-- 图例 -->
+  <rect x="450" y="170" width="120" height="80" fill="white" stroke="#ccc"/>
+  <line x1="460" y1="185" x2="480" y2="185" stroke="#333" stroke-width="2"/>
+  <text x="490" y="190" font-family="Arial" font-size="12">股价</text>
+  
+  <line x1="460" y1="205" x2="480" y2="205" stroke="red" stroke-width="2"/>
+  <text x="490" y="210" font-family="Arial" font-size="12">5日均线</text>
+  
+  <line x1="460" y1="225" x2="480" y2="225" stroke="blue" stroke-width="2"/>
+  <text x="490" y="230" font-family="Arial" font-size="12">20日均线</text>
+  
+  <line x1="460" y1="245" x2="480" y2="245" stroke="green" stroke-width="2"/>
+  <text x="490" y="250" font-family="Arial" font-size="12">60日均线</text>
+</svg>

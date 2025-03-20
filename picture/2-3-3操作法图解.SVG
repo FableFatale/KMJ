@@ -1,0 +1,36 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="500" fill="#f9f9f9"/>
+  
+  <!-- 标题 -->
+  <text x="300" y="30" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">2-3-3操作法图解</text>
+  
+  <!-- 时间轴 -->
+  <line x1="50" y1="250" x2="550" y2="250" stroke="#333" stroke-width="2"/>
+  
+  <!-- 阶段区域 -->
+  <rect x="50" y="200" width="150" height="100" fill="#e6f3ff" stroke="#333"/>
+  <rect x="200" y="200" width="200" height="100" fill="#e6ffe6" stroke="#333"/>
+  <rect x="400" y="200" width="150" height="100" fill="#ffe6e6" stroke="#333"/>
+  
+  <!-- 阶段标题 -->
+  <text x="125" y="180" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">买入阶段</text>
+  <text x="300" y="180" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">持有阶段</text>
+  <text x="475" y="180" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">卖出阶段</text>
+  
+  <!-- 时间标注 -->
+  <text x="125" y="270" font-family="Arial" font-size="12" text-anchor="middle">2个月</text>
+  <text x="300" y="270" font-family="Arial" font-size="12" text-anchor="middle">3个月</text>
+  <text x="475" y="270" font-family="Arial" font-size="12" text-anchor="middle">3个月</text>
+  
+  <!-- 阶段说明 -->
+  <text x="125" y="330" font-family="Arial" font-size="12" text-anchor="middle">分批建仓</text>
+  <text x="300" y="330" font-family="Arial" font-size="12" text-anchor="middle">观察趋势</text>
+  <text x="475" y="330" font-family="Arial" font-size="12" text-anchor="middle">逐步减仓</text>
+  
+  <!-- 策略说明 -->
+  <text x="50" y="400" font-family="Arial" font-size="12">策略说明：</text>
+  <text x="70" y="420" font-family="Arial" font-size="12">1. 买入阶段（2个月）：根据市场情况分批建仓，避免追高</text>
+  <text x="70" y="440" font-family="Arial" font-size="12">2. 持有阶段（3个月）：耐心持有，观察趋势变化</text>
+  <text x="70" y="460" font-family="Arial" font-size="12">3. 卖出阶段（3个月）：根据市场情况逐步减仓，避免踏空</text>
+</svg>

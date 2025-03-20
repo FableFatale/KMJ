@@ -1,0 +1,51 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="500" fill="#f9f9f9"/>
+  
+  <!-- 上半部分：股价图 -->
+  <rect x="50" y="50" width="500" height="200" fill="#f0f0f0" stroke="#ccc"/>
+  
+  <!-- 股价线 -->
+  <polyline points="50,150 100,140 150,130 200,120 250,110 300,100 350,90 400,100 450,110 500,120 550,110" 
+            fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- 下半部分：DMI图 -->
+  <rect x="50" y="280" width="500" height="170" fill="#f0f0f0" stroke="#ccc"/>
+  
+  <!-- +DI线 -->
+  <polyline points="50,380 100,370 150,360 200,350 250,340 300,330 350,320 400,330 450,340 500,350 550,340" 
+            fill="none" stroke="green" stroke-width="2"/>
+  
+  <!-- -DI线 -->
+  <polyline points="50,340 100,350 150,360 200,370 250,380 300,390 350,400 400,390 450,380 500,370 550,380" 
+            fill="none" stroke="red" stroke-width="2"/>
+  
+  <!-- ADX线 -->
+  <polyline points="50,400 100,390 150,380 200,370 250,360 300,350 350,340 400,330 450,320 500,310 550,300" 
+            fill="none" stroke="blue" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- 标注 -->
+  <circle cx="200" cy="360" r="5" fill="purple"/>
+  <text x="210" y="350" font-family="Arial" font-size="12" fill="purple">+DI与-DI交叉</text>
+  
+  <text x="450" y="310" font-family="Arial" font-size="12" fill="blue">ADX上升，趋势增强</text>
+  <path d="M450,315 L450,320" stroke="blue" stroke-width="1" fill="none"/>
+  
+  <!-- 图例 -->
+  <rect x="400" y="100" width="120" height="100" fill="white" stroke="#ccc"/>
+  <line x1="410" y1="115" x2="430" y2="115" stroke="#333" stroke-width="2"/>
+  <text x="440" y="120" font-family="Arial" font-size="12">股价</text>
+  
+  <line x1="410" y1="135" x2="430" y2="135" stroke="green" stroke-width="2"/>
+  <text x="440" y="140" font-family="Arial" font-size="12">+DI</text>
+  
+  <line x1="410" y1="155" x2="430" y2="155" stroke="red" stroke-width="2"/>
+  <text x="440" y="160" font-family="Arial" font-size="12">-DI</text>
+  
+  <line x1="410" y1="175" x2="430" y2="175" stroke="blue" stroke-width="2" stroke-dasharray="5,5"/>
+  <text x="440" y="180" font-family="Arial" font-size="12">ADX</text>
+  
+  <!-- 标题 -->
+  <text x="300" y="30" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">DMI趋向指标图解</text>
+  <text x="300" y="270" font-family="Arial" font-size="14" text-anchor="middle">DMI指标</text>
+</svg>

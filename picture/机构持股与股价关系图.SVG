@@ -1,0 +1,49 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="400" fill="#f9f9f9"/>
+  
+  <!-- 坐标轴 -->
+  <line x1="50" y1="350" x2="550" y2="350" stroke="black" stroke-width="2"/>
+  <line x1="50" y1="50" x2="50" y2="350" stroke="black" stroke-width="2"/>
+  
+  <!-- X轴标签 -->
+  <text x="100" y="370" font-family="Arial" font-size="12" text-anchor="middle">Q1</text>
+  <text x="200" y="370" font-family="Arial" font-size="12" text-anchor="middle">Q2</text>
+  <text x="300" y="370" font-family="Arial" font-size="12" text-anchor="middle">Q3</text>
+  <text x="400" y="370" font-family="Arial" font-size="12" text-anchor="middle">Q4</text>
+  <text x="500" y="370" font-family="Arial" font-size="12" text-anchor="middle">Q5</text>
+  
+  <!-- 股价线 -->
+  <polyline points="100,250 200,230 300,200 400,180 500,150" 
+            fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- 机构持股比例柱状图 -->
+  <rect x="80" y="350" width="40" height="-80" fill="#6495ED" fill-opacity="0.6"/>
+  <rect x="180" y="350" width="40" height="-100" fill="#6495ED" fill-opacity="0.6"/>
+  <rect x="280" y="350" width="40" height="-130" fill="#6495ED" fill-opacity="0.6"/>
+  <rect x="380" y="350" width="40" height="-150" fill="#6495ED" fill-opacity="0.6"/>
+  <rect x="480" y="350" width="40" height="-180" fill="#6495ED" fill-opacity="0.6"/>
+  
+  <!-- 股票回购标记 -->
+  <circle cx="300" cy="200" r="5" fill="red"/>
+  <text x="310" y="190" font-family="Arial" font-size="12" fill="red">股票回购</text>
+  
+  <!-- 标注 -->
+  <text x="400" y="150" font-family="Arial" font-size="12" fill="blue">机构持股增加</text>
+  <text x="400" y="165" font-family="Arial" font-size="12" fill="blue">股价上涨</text>
+  <path d="M400,170 L400,180" stroke="blue" stroke-width="1" fill="none"/>
+  
+  <!-- 图例 -->
+  <rect x="400" y="50" width="150" height="80" fill="white" stroke="#ccc"/>
+  <line x1="410" y1="65" x2="430" y2="65" stroke="#333" stroke-width="2"/>
+  <text x="440" y="70" font-family="Arial" font-size="12">股价</text>
+  
+  <rect x="410" y="85" width="10" height="10" fill="#6495ED" fill-opacity="0.6"/>
+  <text x="440" y="95" font-family="Arial" font-size="12">机构持股比例</text>
+  
+  <circle cx="415" y="115" r="5" fill="red"/>
+  <text x="440" y="120" font-family="Arial" font-size="12">股票回购</text>
+  
+  <!-- 标题 -->
+  <text x="300" y="30" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">机构持股与股价关系图</text>
+</svg>

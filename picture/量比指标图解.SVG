@@ -1,0 +1,50 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="500" fill="#f9f9f9"/>
+  
+  <!-- 上半部分：股价图 -->
+  <rect x="50" y="50" width="500" height="200" fill="#f0f0f0" stroke="#ccc"/>
+  
+  <!-- 股价线 -->
+  <polyline points="50,150 100,145 150,140 200,135 250,130 300,120 350,110 400,100 450,90 500,85 550,80" 
+            fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- 下半部分：量比图 -->
+  <rect x="50" y="280" width="500" height="170" fill="#f0f0f0" stroke="#ccc"/>
+  
+  <!-- 量比参考线 -->
+  <line x1="50" y1="365" x2="550" y2="365" stroke="#999" stroke-width="1"/>
+  <text x="560" y="370" font-family="Arial" font-size="12" fill="#999">1.0</text>
+  
+  <line x1="50" y1="335" x2="550" y2="335" stroke="#ff9999" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="560" y="340" font-family="Arial" font-size="12" fill="#ff9999">1.5</text>
+  
+  <line x1="50" y1="305" x2="550" y2="305" stroke="#ff6666" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="560" y="310" font-family="Arial" font-size="12" fill="#ff6666">2.0</text>
+  
+  <!-- 量比线 -->
+  <polyline points="50,370 100,365 150,360 200,355 250,345 300,335 350,320 400,305 450,290 500,300 550,310" 
+            fill="none" stroke="orange" stroke-width="2"/>
+  
+  <!-- 标注 -->
+  <text x="400" y="285" font-family="Arial" font-size="12" fill="red">量比异常放大</text>
+  <path d="M400,290 L400,305" stroke="red" stroke-width="1" fill="none"/>
+  
+  <text x="300" y="320" font-family="Arial" font-size="12" fill="blue">量比适中</text>
+  <path d="M300,325 L300,335" stroke="blue" stroke-width="1" fill="none"/>
+  
+  <!-- 图例 -->
+  <rect x="400" y="100" width="120" height="80" fill="white" stroke="#ccc"/>
+  <line x1="410" y1="115" x2="430" y2="115" stroke="#333" stroke-width="2"/>
+  <text x="440" y="120" font-family="Arial" font-size="12">股价</text>
+  
+  <line x1="410" y1="135" x2="430" y2="135" stroke="orange" stroke-width="2"/>
+  <text x="440" y="140" font-family="Arial" font-size="12">量比</text>
+  
+  <line x1="410" y1="155" x2="430" y2="155" stroke="#ff6666" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="440" y="160" font-family="Arial" font-size="12">参考线</text>
+  
+  <!-- 标题 -->
+  <text x="300" y="30" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">量比指标图解</text>
+  <text x="300" y="270" font-family="Arial" font-size="14" text-anchor="middle">量比 = 当日成交量/近期平均成交量</text>
+</svg>

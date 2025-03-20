@@ -1,0 +1,45 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="400" fill="#f9f9f9"/>
+  
+  <!-- 标题 -->
+  <text x="300" y="30" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">回调概念图解</text>
+  
+  <!-- 坐标轴 -->
+  <line x1="50" y1="350" x2="550" y2="350" stroke="black" stroke-width="2"/>
+  <line x1="50" y1="50" x2="50" y2="350" stroke="black" stroke-width="2"/>
+  
+  <!-- 股价走势线 -->
+  <polyline points="50,300 100,280 150,250 200,220 250,180 300,200 350,190 400,170 450,160 500,150 550,140" 
+            fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- 回调区间标注 -->
+  <line x1="250" y1="180" x2="300" y2="200" stroke="red" stroke-width="2"/>
+  <path d="M250,180 L270,175 L270,185 Z" fill="red"/>
+  <text x="275" y="160" font-family="Arial" font-size="12" fill="red">回调区间</text>
+  
+  <!-- 上升趋势线 -->
+  <line x1="50" y1="320" x2="550" y2="120" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="560" y="120" font-family="Arial" font-size="12">上升趋势线</text>
+  
+  <!-- 关键点位标注 -->
+  <circle cx="250" cy="180" r="5" fill="blue"/>
+  <text x="250" y="165" font-family="Arial" font-size="12" text-anchor="middle">高点</text>
+  
+  <circle cx="300" cy="200" r="5" fill="blue"/>
+  <text x="300" y="215" font-family="Arial" font-size="12" text-anchor="middle">回调低点</text>
+  
+  <!-- 图例 -->
+  <rect x="400" y="50" width="140" height="80" fill="white" stroke="#ccc"/>
+  <line x1="410" y1="70" x2="430" y2="70" stroke="#333" stroke-width="2"/>
+  <text x="440" y="75" font-family="Arial" font-size="12">股价走势</text>
+  
+  <line x1="410" y1="95" x2="430" y2="95" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="440" y="100" font-family="Arial" font-size="12">趋势线</text>
+  
+  <circle cx="420" cy="115" r="5" fill="blue"/>
+  <text x="440" y="120" font-family="Arial" font-size="12">关键点位</text>
+  
+  <!-- 说明文字 -->
+  <text x="300" y="380" font-family="Arial" font-size="14" text-anchor="middle">回调是指股价在上升趋势中的短期下跌调整</text>
+</svg>

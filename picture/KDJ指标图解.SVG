@@ -1,0 +1,55 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="500" fill="#f9f9f9"/>
+  
+  <!-- 上半部分：股价图 -->
+  <rect x="50" y="50" width="500" height="200" fill="#f0f0f0" stroke="#ccc"/>
+  
+  <!-- 股价线 -->
+  <polyline points="50,150 100,140 150,130 200,140 250,150 300,140 350,130 400,120 450,130 500,140 550,130" 
+            fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- 下半部分：KDJ图 -->
+  <rect x="50" y="280" width="500" height="170" fill="#f0f0f0" stroke="#ccc"/>
+  
+  <!-- KDJ区域线 -->
+  <line x1="50" y1="300" x2="550" y2="300" stroke="#ff9999" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="560" y="305" font-family="Arial" font-size="12" fill="#ff9999">80</text>
+  
+  <line x1="50" y1="430" x2="550" y2="430" stroke="#99ccff" stroke-width="1" stroke-dasharray="5,5"/>
+  <text x="560" y="435" font-family="Arial" font-size="12" fill="#99ccff">20</text>
+  
+  <!-- K线 -->
+  <polyline points="50,350 100,330 150,310 200,320 250,330 300,350 350,370 400,390 450,370 500,350 550,330" 
+            fill="none" stroke="black" stroke-width="2"/>
+  
+  <!-- D线 -->
+  <polyline points="50,360 100,350 150,340 200,330 250,340 300,350 350,360 400,370 450,360 500,350 550,340" 
+            fill="none" stroke="red" stroke-width="2"/>
+  
+  <!-- J线 -->
+  <polyline points="50,340 100,310 150,280 200,310 250,320 300,350 350,380 400,410 450,380 500,350 550,320" 
+            fill="none" stroke="blue" stroke-width="2"/>
+  
+  <!-- 标注 -->
+  <circle cx="200" cy="330" r="5" fill="green"/>
+  <text x="210" y="320" font-family="Arial" font-size="12" fill="green">金叉(买入)</text>
+  
+  <circle cx="400" cy="380" r="5" fill="red"/>
+  <text x="410" y="370" font-family="Arial" font-size="12" fill="red">死叉(卖出)</text>
+  
+  <!-- 图例 -->
+  <rect x="450" y="100" width="120" height="80" fill="white" stroke="#ccc"/>
+  <line x1="460" y1="115" x2="480" y2="115" stroke="black" stroke-width="2"/>
+  <text x="490" y="120" font-family="Arial" font-size="12">K线</text>
+  
+  <line x1="460" y1="135" x2="480" y2="135" stroke="red" stroke-width="2"/>
+  <text x="490" y="140" font-family="Arial" font-size="12">D线</text>
+  
+  <line x1="460" y1="155" x2="480" y2="155" stroke="blue" stroke-width="2"/>
+  <text x="490" y="160" font-family="Arial" font-size="12">J线</text>
+  
+  <!-- 标题 -->
+  <text x="300" y="30" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">KDJ随机指标图解</text>
+  <text x="300" y="270" font-family="Arial" font-size="14" text-anchor="middle">KDJ指标</text>
+</svg>

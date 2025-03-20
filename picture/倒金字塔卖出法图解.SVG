@@ -1,0 +1,33 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="500" fill="#f9f9f9"/>
+  
+  <!-- 标题 -->
+  <text x="300" y="30" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">倒金字塔卖出法图解</text>
+  
+  <!-- 股价走势图 -->
+  <polyline points="50,150 100,180 150,220 200,250 250,280 300,310 350,330 400,350 450,370 500,390 550,400" 
+            fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- 减仓点标注 -->
+  <circle cx="150" cy="220" r="5" fill="green"/>
+  <text x="160" y="210" font-family="Arial" font-size="12">首次减仓5%</text>
+  
+  <circle cx="250" cy="280" r="5" fill="green"/>
+  <text x="260" y="270" font-family="Arial" font-size="12">减仓10%</text>
+  
+  <circle cx="350" cy="330" r="5" fill="green"/>
+  <text x="360" y="320" font-family="Arial" font-size="12">减仓15%</text>
+  
+  <circle cx="450" cy="370" r="5" fill="green"/>
+  <text x="460" y="360" font-family="Arial" font-size="12">减仓20%</text>
+  
+  <!-- 倒金字塔示意图 -->
+  <path d="M100,350 L200,450 L300,450 L400,350 Z" fill="#f0f0f0" stroke="#666"/>
+  <text x="250" y="420" font-family="Arial" font-size="12" text-anchor="middle">仓位递增</text>
+  
+  <!-- 说明文字 -->
+  <text x="50" y="480" font-family="Arial" font-size="12">策略说明：</text>
+  <text x="120" y="480" font-family="Arial" font-size="12">1. 在下跌趋势确立后逐步减仓</text>
+  <text x="120" y="495" font-family="Arial" font-size="12">2. 随着股价下跌，每次减仓的仓位逐步增加</text>
+</svg>

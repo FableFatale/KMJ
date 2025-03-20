@@ -1,0 +1,37 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="400" fill="#f9f9f9"/>
+  
+  <!-- 坐标轴 -->
+  <line x1="50" y1="350" x2="550" y2="350" stroke="black" stroke-width="2"/>
+  <line x1="50" y1="50" x2="50" y2="350" stroke="black" stroke-width="2"/>
+  
+  <!-- 股价线 -->
+  <polyline points="50,250 100,260 150,270 200,260 250,240 300,220 350,200 400,180 450,150 500,130 550,120" 
+            fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- 20日均线 -->
+  <polyline points="50,230 100,235 150,240 200,245 250,240 300,230 350,220 400,210 450,200 500,190 550,180" 
+            fill="none" stroke="blue" stroke-width="2"/>
+  
+  <!-- 向上突破标注 -->
+  <circle cx="300" cy="220" r="5" fill="red"/>
+  <text x="310" y="200" font-family="Arial" font-size="12" fill="red">向上突破(买入信号)</text>
+  <path d="M310,205 L300,220" stroke="red" stroke-width="1" fill="none"/>
+  
+  <!-- 向下突破标注 -->
+  <circle cx="200" cy="260" r="5" fill="green"/>
+  <text x="210" y="280" font-family="Arial" font-size="12" fill="green">向下突破(卖出信号)</text>
+  <path d="M210,275 L200,260" stroke="green" stroke-width="1" fill="none"/>
+  
+  <!-- 图例 -->
+  <rect x="450" y="50" width="120" height="60" fill="white" stroke="#ccc"/>
+  <line x1="460" y1="65" x2="480" y2="65" stroke="#333" stroke-width="2"/>
+  <text x="490" y="70" font-family="Arial" font-size="12">股价</text>
+  
+  <line x1="460" y1="85" x2="480" y2="85" stroke="blue" stroke-width="2"/>
+  <text x="490" y="90" font-family="Arial" font-size="12">20日均线</text>
+  
+  <!-- 标题 -->
+  <text x="300" y="30" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">均线突破买卖信号图</text>
+</svg>

@@ -1,0 +1,52 @@
+<svg width="600" height="500" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="500" fill="#f9f9f9"/>
+  
+  <!-- 上半部分：股价图 -->
+  <rect x="50" y="50" width="500" height="200" fill="#f0f0f0" stroke="#ccc"/>
+  
+  <!-- 股价线 -->
+  <polyline points="50,150 100,140 150,130 200,120 250,100 300,80 350,90 400,100 450,90 500,80 550,70" 
+            fill="none" stroke="#333" stroke-width="2"/>
+  
+  <!-- 下半部分：换手率图 -->
+  <rect x="50" y="280" width="500" height="170" fill="#f0f0f0" stroke="#ccc"/>
+  
+  <!-- 换手率柱状图 -->
+  <rect x="60" y="400" width="20" height="-30" fill="#888"/>
+  <rect x="110" y="400" width="20" height="-40" fill="#888"/>
+  <rect x="160" y="400" width="20" height="-50" fill="#888"/>
+  <rect x="210" y="400" width="20" height="-60" fill="#888"/>
+  <rect x="260" y="400" width="20" height="-100" fill="red"/>
+  <rect x="310" y="400" width="20" height="-120" fill="red"/>
+  <rect x="360" y="400" width="20" height="-70" fill="#888"/>
+  <rect x="410" y="400" width="20" height="-90" fill="red"/>
+  <rect x="460" y="400" width="20" height="-110" fill="red"/>
+  <rect x="510" y="400" width="20" height="-80" fill="#888"/>
+  
+  <!-- 换手率均线 -->
+  <polyline points="50,370 100,370 150,365 200,360 250,355 300,350 350,345 400,340 450,335 500,340 550,345" 
+            fill="none" stroke="blue" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- 标注 -->
+  <text x="300" y="320" font-family="Arial" font-size="12" fill="red">换手率异常放大</text>
+  <path d="M300,325 L300,280" stroke="red" stroke-width="1" fill="none"/>
+  
+  <text x="450" y="320" font-family="Arial" font-size="12" fill="red">主力资金活跃</text>
+  <path d="M450,325 L450,290" stroke="red" stroke-width="1" fill="none"/>
+  
+  <!-- 图例 -->
+  <rect x="400" y="100" width="120" height="80" fill="white" stroke="#ccc"/>
+  <line x1="410" y1="115" x2="430" y2="115" stroke="#333" stroke-width="2"/>
+  <text x="440" y="120" font-family="Arial" font-size="12">股价</text>
+  
+  <rect x="410" y="135" width="10" height="10" fill="#888"/>
+  <text x="440" y="145" font-family="Arial" font-size="12">正常换手率</text>
+  
+  <rect x="410" y="155" width="10" height="10" fill="red"/>
+  <text x="440" y="165" font-family="Arial" font-size="12">异常换手率</text>
+  
+  <!-- 标题 -->
+  <text x="300" y="30" font-family="Arial" font-size="16" text-anchor="middle" font-weight="bold">换手率指标图解</text>
+  <text x="300" y="270" font-family="Arial" font-size="14" text-anchor="middle">换手率 = 成交量/流通股本</text>
+</svg>
